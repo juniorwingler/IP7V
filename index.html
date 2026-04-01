@@ -3,81 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IPTV e P2P num lugar só!</title>
+<title>IPTV Premium</title>
 
 <style>
-* {margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body {background:#0f172a;color:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{background:#0b0f1a;color:#fff;}
 
-header {
-  background:#020617;
+header{
+  display:flex;
+  justify-content:space-between;
   padding:20px;
-  text-align:center;
+  background:#020617;
 }
-header h1 {color:#22c55e;}
+header h1{color:#22c55e;}
 
-.hero {
+.hero{
   text-align:center;
-  padding:50px 20px;
+  padding:80px 20px;
+  background:linear-gradient(to right,#020617,#0f172a);
 }
-.hero h2 {font-size:30px;}
-.hero p {color:#cbd5f5;margin:15px 0;}
+.hero h2{font-size:36px;}
+.hero p{color:#94a3b8;margin:15px 0;}
 
-.planos {
+.btn{
+  background:#22c55e;
+  padding:12px 25px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  color:#fff;
+  font-weight:bold;
+}
+
+/* Planos */
+.planos{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  padding:30px;
+  padding:40px;
 }
 
-.plano {
-  background:#1e293b;
+.plano{
+  background:#111827;
   margin:15px;
   padding:25px;
   border-radius:12px;
-  width:250px;
+  width:260px;
   text-align:center;
+  border:1px solid #1f2937;
   transition:.3s;
 }
-.plano:hover {transform:scale(1.05);}
+.plano:hover{transform:translateY(-8px);}
 
-.preco {
-  font-size:28px;
+.preco{
+  font-size:30px;
   color:#22c55e;
   margin:15px 0;
 }
 
-button {
-  background:#22c55e;
-  border:none;
-  padding:12px 20px;
-  color:#fff;
-  border-radius:8px;
-  cursor:pointer;
+/* Destaque */
+.destaque{
+  border:2px solid #22c55e;
 }
 
-.pix {
-  background:#020617;
-  padding:30px;
+/* Benefícios */
+.beneficios{
+  padding:40px;
   text-align:center;
 }
-
-.pix-box {
-  background:#1e293b;
+.beneficios-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.beneficio{
+  width:250px;
+  margin:15px;
   padding:20px;
+  background:#020617;
   border-radius:10px;
-  display:inline-block;
 }
 
-footer {
-  text-align:center;
-  padding:20px;
+/* Depoimentos */
+.depoimentos{
   background:#020617;
+  padding:40px;
+  text-align:center;
+}
+.depoimento{
+  max-width:500px;
+  margin:10px auto;
   color:#94a3b8;
 }
 
-/* WhatsApp */
-.whatsapp {
+/* Pix */
+.pix{
+  text-align:center;
+  padding:40px;
+}
+.pix-box{
+  display:inline-block;
+  background:#111827;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* Whats */
+.whatsapp{
   position:fixed;
   bottom:20px;
   right:20px;
@@ -85,20 +117,21 @@ footer {
   padding:15px;
   border-radius:50%;
   cursor:pointer;
+  font-size:20px;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-  <h1>Servidor IPTV e P2P Premium</h1>
+  <h1>🔥 IPTV Premium</h1>
 </header>
 
 <section class="hero">
-  <h2>Assista tudo sem travamentos!</h2>
-  <p>Filmes, séries e canais liberados.</p>
+  <h2>O Melhor IPTV do Brasil</h2>
+  <p>Canais, filmes e séries sem travamento</p>
+  <button class="btn" onclick="comprar('Teste Gratis',0)">TESTE GRÁTIS</button>
 </section>
 
 <section class="planos">
@@ -106,42 +139,53 @@ footer {
   <div class="plano">
     <h3>15 Dias</h3>
     <div class="preco">R$ 20</div>
-    <button onclick="comprar('15 Dias', 20)">Comprar</button>
+    <button class="btn" onclick="comprar('15 Dias',20)">Comprar</button>
   </div>
 
-  <div class="plano">
+  <div class="plano destaque">
     <h3>30 Dias</h3>
     <div class="preco">R$ 30</div>
-    <button onclick="comprar('30 Dias', 30)">Comprar</button>
+    <button class="btn" onclick="comprar('30 Dias',30)">Comprar</button>
   </div>
 
   <div class="plano">
     <h3>3 Meses</h3>
     <div class="preco">R$ 90</div>
-    <button onclick="comprar('3 Meses', 90)">Comprar</button>
+    <button class="btn" onclick="comprar('3 Meses',90)">Comprar</button>
   </div>
 
   <div class="plano">
     <h3>1 Ano</h3>
     <div class="preco">R$ 220</div>
-    <button onclick="comprar('1 Ano', 220)">Comprar</button>
+    <button class="btn" onclick="comprar('1 Ano',220)">Comprar</button>
   </div>
 
+</section>
+
+<section class="beneficios">
+  <h2>Por que escolher nosso IPTV?</h2>
+  <div class="beneficios-grid">
+    <div class="beneficio">📺 +10.000 canais</div>
+    <div class="beneficio">🎬 Filmes e séries</div>
+    <div class="beneficio">⚡ Sem travamentos</div>
+    <div class="beneficio">📞 Suporte rápido</div>
+  </div>
+</section>
+
+<section class="depoimentos">
+  <h2>Clientes satisfeitos</h2>
+  <div class="depoimento">"Melhor IPTV que já usei!"</div>
+  <div class="depoimento">"Instalei em 5 minutos e funcionou perfeito"</div>
 </section>
 
 <section class="pix">
-  <h2>💳 Pagamento via Pix</h2>
+  <h2>Pagamento via Pix</h2>
   <div class="pix-box">
-    <p><strong>Chave Pix:</strong></p>
-    <p id="chavePix">2799610080</p>
+    <p id="pix">27996410080</p>
     <br>
-    <button onclick="copiarPix()">Copiar chave</button>
+    <button class="btn" onclick="copiar()">Copiar Pix</button>
   </div>
 </section>
-
-<footer>
-  © 2026 IPTV 
-</footer>
 
 <div class="whatsapp" onclick="abrirWhatsApp('Olá, quero informações')">
   💬
@@ -150,20 +194,20 @@ footer {
 <script>
 const numero = "5527996410080";
 
-function comprar(plano, valor) {
-  let mensagem = `Olá, quero comprar o plano ${plano} no valor de R$ ${valor}. Já posso realizar o pagamento via Pix?`;
-  abrirWhatsApp(mensagem);
+function comprar(plano, valor){
+  let msg = `Olá, quero comprar o plano ${plano} no valor de R$ ${valor}.`;
+  abrirWhatsApp(msg);
 }
 
-function abrirWhatsApp(msg) {
+function abrirWhatsApp(msg){
   let url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
-  window.open(url, '_blank');
+  window.open(url,'_blank');
 }
 
-function copiarPix() {
-  let chave = document.getElementById("chavePix").innerText;
-  navigator.clipboard.writeText(chave);
-  alert("Chave Pix copiada!");
+function copiar(){
+  let texto = document.getElementById("pix").innerText;
+  navigator.clipboard.writeText(texto);
+  alert("Pix copiado!");
 }
 </script>
 
