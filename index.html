@@ -3,210 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IPTV e P2P num só lugar!</title>
+<title>IPTV Premium</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  background: #0f172a;
+  margin: 0;
+  font-family: Arial;
+  background: #000;
   color: #fff;
 }
 
 header {
-  background: #020617;
-  padding: 20px;
-  text-align: center;
+  padding: 15px;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
 }
 
 header h1 {
-  color: #22c55e;
+  color: red;
 }
 
 .hero {
-  padding: 60px 20px;
-  text-align: center;
+  height: 60vh;
+  background: url('https://images.unsplash.com/photo-1601933470928-c9f9e4f95c4f') center/cover;
+  display: flex;
+  align-items: center;
+  padding: 30px;
 }
 
 .hero h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  color: #cbd5f5;
-  margin-bottom: 20px;
+  font-size: 40px;
+  max-width: 400px;
 }
 
 .btn {
-  background: #22c55e;
-  color: white;
-  padding: 12px 25px;
+  background: red;
+  padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  color: white;
   cursor: pointer;
-  font-size: 16px;
+  margin-top: 10px;
+}
+
+.catalogo {
+  padding: 20px;
+}
+
+.filmes {
+  display: flex;
+  overflow-x: auto;
+}
+
+.filme {
+  min-width: 150px;
+  height: 200px;
+  margin: 10px;
+  background: #222;
+  border-radius: 10px;
 }
 
 .planos {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  padding: 40px;
+  justify-content: center;
+  padding: 20px;
 }
 
 .plano {
-  background: #1e293b;
-  margin: 15px;
-  padding: 25px;
-  border-radius: 12px;
-  width: 250px;
+  background: #111;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
   text-align: center;
-  transition: 0.3s;
-}
-
-.plano:hover {
-  transform: scale(1.05);
-}
-
-.plano h3 {
-  margin-bottom: 10px;
 }
 
 .preco {
-  font-size: 28px;
-  margin: 15px 0;
-  color: #22c55e;
+  color: #0f0;
+  font-size: 24px;
 }
 
-.beneficios {
-  text-align: left;
-  margin: 15px 0;
+button {
+  margin-top: 10px;
 }
 
-.beneficios li {
-  margin: 5px 0;
-}
-
-.depoimentos {
-  padding: 40px;
-  background: #020617;
-  text-align: center;
-}
-
-.depoimento {
-  margin: 15px auto;
-  max-width: 500px;
-  font-style: italic;
-  color: #cbd5f5;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #020617;
-  font-size: 14px;
-  color: #94a3b8;
-}
-
-/* Botão flutuante WhatsApp */
+/* WhatsApp */
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #22c55e;
-  color: white;
-  border-radius: 50%;
+  background: #25d366;
   padding: 15px;
-  font-size: 22px;
-  text-align: center;
+  border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-  <h1> Server IPTV e P2P</h1>
+  <h1>IPTV</h1>
 </header>
 
 <section class="hero">
-  <h2>Assista tudo sem travamentos</h2>
-  <p>Filmes, séries e canais liberados na palma da sua mão.</p>
-  <button class="btn" onclick="comprar('Teste Gratis')">TESTE GRÁTIS</button>
+  <div>
+    <h2>Filmes, Séries e Canais sem limites</h2>
+    <button class="btn" onclick="comprar('Teste Gratis')">TESTE GRÁTIS</button>
+  </div>
+</section>
+
+<section class="catalogo">
+  <h2>Catálogo</h2>
+  <div class="filmes">
+    <div class="filme"></div>
+    <div class="filme"></div>
+    <div class="filme"></div>
+    <div class="filme"></div>
+  </div>
 </section>
 
 <section class="planos">
 
   <div class="plano">
-    <h3>Mensal</h3>
-    <div class="preco">R$ 30</div>
-    <ul class="beneficios">
-      <li>✔ +5000 canais</li>
-      <li>✔ Filmes e séries</li>
-      <li>✔ Suporte rápido</li>
-    </ul>
-    <button class="btn" onclick="comprar('Mensal')">Comprar</button>
+    <h3>15 Dias</h3>
+    <div class="preco">R$20</div>
+    <button onclick="comprar('15 dias - R$20')">Comprar</button>
   </div>
 
   <div class="plano">
-    <h3>Trimestral</h3>
-    <div class="preco">R$ 90</div>
-    <ul class="beneficios">
-      <li>✔ +5000 canais</li>
-      <li>✔ Custo beneficio</li>
-      <li>✔ Suporte VIP</li>
-    </ul>
-    <button class="btn" onclick="comprar('Trimestral')">Comprar</button>
+    <h3>30 Dias</h3>
+    <div class="preco">R$30</div>
+    <button onclick="comprar('30 dias - R$30')">Comprar</button>
   </div>
 
   <div class="plano">
-    <h3>Anual</h3>
-    <div class="preco">R$ 220</div>
-    <ul class="beneficios">
-      <li>✔ Economia máxima</li>
-      <li>✔ Qualidade SD/HD/FullHD/4K</li>
-      <li>✔ Atendimento prioritário</li>
-    </ul>
-    <button class="btn" onclick="comprar('Anual')">Comprar</button>
+    <h3>3 Meses</h3>
+    <div class="preco">R$90</div>
+    <button onclick="comprar('3 meses - R$90')">Comprar</button>
+  </div>
+
+  <div class="plano">
+    <h3>1 Ano</h3>
+    <div class="preco">R$220</div>
+    <button onclick="comprar('1 ano - R$220')">Comprar</button>
   </div>
 
 </section>
 
-<section class="depoimentos">
-  <h2>O que nossos clientes dizem:</h2>
-
-  <div class="depoimento">
-    "Muito bom, não trava e entrega tudo que promete!"
-  </div>
-
-  <div class="depoimento">
-    "Atendimento rápido e funcionou na minha TV sem dificuldade."
-  </div>
-
-</section>
-
-<footer>
-  © 2026 IPTV  - Todos os direitos reservados
-</footer>
-
-<!-- Botão flutuante -->
+<!-- Botão WhatsApp -->
 <div class="whatsapp" onclick="comprar">
   💬
 </div>
 
 <script>
 function comprar(plano) {
-  let numero = "5527996410080"; 
-  let mensagem = `Olá, quero informações sobre o plano ${plano}`;
+  let numero = "5527996410080";
+  let mensagem = `Olá, quero comprar o plano ${plano}. Como faço o pagamento via Pix?`;
   let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, '_blank');
 }
